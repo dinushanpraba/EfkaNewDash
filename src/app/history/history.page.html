@@ -1,0 +1,122 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>History</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row class="row1">
+      <ion-col class="col1">
+        <ion-card>
+          <ion-card-header> Machine SN </ion-card-header>
+          <ion-card-content>{{MachineSN}} </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="col2">
+        <ion-card>
+          <ion-card-header> Select Start date </ion-card-header>
+          <ion-card-content>
+            <ion-datetime-button datetime="startdate"></ion-datetime-button>
+
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime
+                  displayFormat="YYYY-MM-dd"
+                  presentation="date"
+                  id="startdate"
+                  [(ngModel)]="startDate"
+                ></ion-datetime>
+              </ng-template>
+            </ion-modal>
+    
+<!--             
+            <ion-input
+            value="{{ startDate | date: 'dd.MM.yyyy' }}"
+            id="startdate"
+          
+          ></ion-input>
+          <ion-popover trigger="startdate" size="cover">
+            <ng-template>
+              <ion-datetime
+              displayFormat="YYYY-MM-dd"
+                presentation="date"
+                [(ngModel)]="startDate"
+                locale="sl-SI"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="col3">
+        <ion-card>
+          <ion-card-header> Select End Date </ion-card-header>
+          <ion-card-content>
+            <ion-datetime-button datetime="enddate"></ion-datetime-button>
+
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime
+                  displayFormat="YYYY-MM-dd"
+                  presentation="date"
+                  id="enddate"
+                  [(ngModel)]="endDate"
+                  (ngModelChange)=" ChangedDate($event)"
+                ></ion-datetime>
+              </ng-template>
+            </ion-modal>
+            <!-- <ion-datetime displayFormat="MM/DD/YYYY" presentation="date" [(ngModel)]="endDate"></ion-datetime> -->
+            <!-- <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" ></ion-datetime> -->
+
+         
+<!--     
+            
+              <ion-input
+                value="{{ endDate | date: 'dd.MM.yyyy' }}"
+                id="enddate"
+              
+              ></ion-input>
+              <ion-popover trigger="enddate" size="cover">
+                <ng-template>
+                  <ion-datetime
+                  displayFormat="YYYY-MM-dd"
+                    presentation="date"
+                    [(ngModel)]="endDate"
+                    locale="sl-SI"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-popover> -->
+        
+
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row2">
+      <ion-col class="col1">
+    <ion-card>
+      <ion-card-header>Summary For the selected Dates</ion-card-header>
+      <ion-card-content>    <canvas
+        #barCanvas
+        style="position: relative; height: 328px; width: 40vw"
+      ></canvas></ion-card-content>
+    </ion-card>
+    </ion-col>
+    <ion-col class="col2">
+      <ion-card>
+        <ion-card-header> Percentage Summary</ion-card-header>
+        <ion-card-content>
+          <canvas
+          #pieCanvas
+          style="position: relative; height: 398px; width: 40vw"
+        ></canvas>
+        </ion-card-content>
+      </ion-card>
+     
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

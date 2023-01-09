@@ -1,0 +1,51 @@
+.grid {
+    height: 100%;
+    background: #4a556ff5;
+  .row1 {
+    .col1 {
+      ion-card {
+        font-size: 21px;
+        height: 90px;
+        text-align: center;
+        ion-card-header {
+        }
+        ion-card-content {
+        }
+      }
+    }
+    .col2 {
+        font-size: 21px;
+        height: 90px;
+        text-align: center;
+        ion-card-header {
+        }
+        ion-card-content {
+        }
+        
+    }
+    .col3 {
+        font-size: 21px;
+        height: 90px;
+        text-align: center;
+        ion-card-header {
+        }
+        ion-card-content {
+        }
+    }
+  }
+
+  .row2 {
+    .col1 {
+        ion-card{
+            width: 422px;
+        }
+    }
+    .col2 {
+        ion-card{
+            ion-card-content{
+                height: 344px;
+            }
+        }
+    }
+  }
+}

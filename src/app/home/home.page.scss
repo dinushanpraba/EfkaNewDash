@@ -25,3 +25,77 @@
 #container a {
   text-decoration: none;
 }
+.scroll-y {
+  overscroll-behavior-y: contain;
+}
+ion-content{
+  display: contents;
+}
+
+.grid {
+  // height: 100%;
+  min-height: 768px;
+  background-color: #3c3554;
+  .row1 {
+    .col1 {
+      ion-card {
+        height: 100px;
+        background-color: #458d7578;
+        color: white;
+        text-align: center;
+        ion-card-header{
+          color: #ffc600;
+    font-size: 21px;
+        }
+      }
+    }
+    .col2 {
+      ion-card {
+        height: 100px;
+        background-color: #458d7578;
+        color: white;
+        text-align: center;
+        ion-card-header{
+          color: #ffc600;
+    font-size: 21px;
+        }
+      }
+    }
+    .col3 {
+      ion-card {
+        height: 100px;
+        background-color: #458d7578;
+        color: white;
+        text-align: center;
+        ion-card-header{
+          color: #ffc600;
+    font-size: 21px;
+        }
+      }
+    }
+  }
+
+  .row2{
+    .col1{
+      ion-card{
+        background-color: #ecebc6;
+        text-align: center;
+      }
+    }
+    .col2{
+      ion-card{
+        background-color: #ecebc6;
+        text-align: center;
+      }
+    }
+  }
+  .row3{
+    ion-card{
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      background: #ffe900;
+
+    }
+  }
+}

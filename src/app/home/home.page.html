@@ -1,20 +1,79 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid class="grid">
+    <ion-row class="row1">
+      <ion-col class="col1">
+        <ion-card>
+          <ion-card-header> Date & Time </ion-card-header>
+          <ion-card-content>
+            {{dateTime|date:'YYYY-MM-dd HH:mm:ss'}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="col2"
+        ><ion-card>
+          <ion-card-header> Style </ion-card-header>
+          <ion-card-content> {{ModuleList[0].ProductName}} </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="col3"
+        ><ion-card>
+          <ion-card-header> Module </ion-card-header>
+          <ion-card-content>
+            <!-- <ion-list>
+      <ion-item> -->
+            <ion-select
+              [(ngModel)]="inputparams.moduleid"
+              (ionChange)=" insertTable($event)"
+              placeholder="{{inputparams.moduleid}}"
+            >
+              <ion-select-option value="apples">Apples</ion-select-option>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+              <ion-select-option
+                *ngFor="let item of ModuleList; i:index"
+                value="{{item.ID}}"
+                >{{item.Description}}</ion-select-option
+              >
+            </ion-select>
+            <!-- </ion-item>
+    </ion-list> -->
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row>
+
+    <ion-row class="row2">
+      <ion-col class="col1">
+        <ion-card>
+          <ion-card-header> Machine Wise Time Distribution </ion-card-header>
+          <ion-card-content>
+            <canvas
+              #barCanvas
+              style="position: relative; height: 328px; width: 40vw"
+            ></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="col2">
+        <ion-card>
+          <ion-card-header> Module Summary </ion-card-header>
+          <ion-card-content>
+            <canvas
+              #pieCanvas
+              style="position: relative; height: 328px; width: 40vw"
+            ></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row3">
+      <ion-card>
+        <ion-card-header> History OF Machines</ion-card-header>
+        <ion-card-content>
+<ion-button  *ngFor="let item of machineSNList; i:index" (click)="openModal(item)">{{item}}</ion-button>
+</ion-card-content>
+</ion-card>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
